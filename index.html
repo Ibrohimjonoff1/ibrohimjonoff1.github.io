@@ -1,0 +1,1066 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Izzatilla Ibrohimjonoff designs production-ready Figma UI kits: EMBER, an AI-native coffee marketplace kit, and HELIX, a bio-performance OS kit for iOS and macOS.">
+<meta property="og:title" content="Izzatilla Ibrohimjonoff · UI kit designer">
+<meta property="og:description" content="Figma UI kits: EMBER (coffee marketplace) and HELIX (health OS for iOS & macOS).">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232348E8'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='14' fill='white' text-anchor='middle'%3EII%3C/text%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Izzatilla Ibrohimjonoff</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<!-- ═══════════════ EDIT YOUR LINKS HERE ═══════════════
+     Write each link between the quotes, then save the file.
+     Leave "" empty to show "Coming soon" instead.
+       dribbble  full link, e.g. "https://dribbble.com/yourname"
+       behance   full link, e.g. "https://www.behance.net/yourname"
+       email     just the address, e.g. "hello@yourname.com"
+       telegram  username, with or without @, e.g. "yourname"
+     ════════════════════════════════════════════════════ -->
+<script>
+window.PORTFOLIO_LINKS = {
+  dribbble: "https://dribbble.com/izzatilla-ibrohimjonoff",
+  behance:  "https://www.behance.net/cc9dc52d",
+  email:    "ibrohimjonoffizzatilla@gmail.com",
+  telegram: ""
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Hanken+Grotesk:wght@400;500;600&family=Martian+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Unbounded:wght@300..600&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: a designer's spec sheet. Cool drafting paper and cobalt ink frame the work,
+   so the warm EMBER mockups are the only warm thing on the page. */
+:root {
+  --paper: #EDF0F3;
+  --sheet: #F8FAFB;
+  --ink: #0F141B;
+  --muted: #586373;
+  --line: #D0D7DF;
+  --accent: #2348E8;
+  --accent-ink: #FFFFFF;
+  --grid: rgba(35, 72, 232, 0.06);
+
+  --f-display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --f-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "Martian Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* EMBER tokens (Crema) */
+  --e-canvas: #F6EFE4; --e-surface: #FBF7F0; --e-raised: #FFFFFF; --e-sunken: #EDE2D0; --e-border: #E2D4BE;
+  --e-text: #2B1B14; --e-text-2: #6E5A4C; --e-brand: #C4572B; --e-brand-2: #A9461F; --e-moss: #5F6B3A; --e-honey: #E0A03A;
+  --e-rose: #E8A798; --e-success: #4E7D4A; --e-warning: #C98400; --e-error: #B3261E;
+  --e-r-light: #D9A66B; --e-r-medium: #A5672F; --e-r-mdark: #6B3A1B; --e-r-dark: #3B1F10;
+  --e-shadow: 0 16px 40px rgba(90, 58, 34, .14), 0 2px 4px rgba(90, 58, 34, .06);
+  --e-serif: "Fraunces", Georgia, serif;
+  --e-sans: "Instrument Sans", system-ui, sans-serif;
+  --e-mono: "Geist Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0D1116; --sheet: #131921; --ink: #E7ECF2; --muted: #8C97A6; --line: #262E39;
+    --accent: #7E97FF; --accent-ink: #0D1116; --grid: rgba(126, 151, 255, 0.05); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0D1116; --sheet: #131921; --ink: #E7ECF2; --muted: #8C97A6; --line: #262E39;
+  --accent: #7E97FF; --accent-ink: #0D1116; --grid: rgba(126, 151, 255, 0.05); color-scheme: dark;
+}
+/* EMBER Night Roast, switched by the toggle on the EMBER section */
+.ember[data-mode="dark"] {
+  --e-canvas: #17110D; --e-surface: #221914; --e-raised: #2D221B; --e-sunken: #110C09; --e-border: #3A2C23;
+  --e-text: #F6EFE4; --e-text-2: #BFAE9C; --e-brand: #E0703F; --e-brand-2: #EC8556; --e-moss: #8FA05A; --e-honey: #F0B955;
+  --e-success: #7BB274; --e-warning: #F0B955; --e-error: #F2766E;
+  --e-shadow: 0 16px 40px rgba(0, 0, 0, .45), 0 2px 4px rgba(0, 0, 0, .3);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-body); font-size: 17px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap {
+  max-width: 1240px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) { .wrap { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
+
+/* ── type ── */
+.label { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; margin: 0; }
+h2 { font-size: clamp(34px, 5vw, 60px); line-height: 1; font-variation-settings: "wdth" 85; }
+h3 { font-size: 24px; line-height: 1.15; }
+p { margin: 0; max-width: 62ch; }
+.lead { font-size: clamp(18px, 2vw, 21px); color: var(--muted); }
+
+/* ── nav ── */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; gap: 24px; padding-block: 14px; }
+.mark { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--f-display); font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+.mark i { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-style: normal; font-size: 14px; }
+.nav ul { display: flex; gap: 22px; list-style: none; margin: 0 0 0 auto; padding: 0; }
+.nav ul a { text-decoration: none; font-size: 15px; color: var(--muted); }
+.nav ul a:hover { color: var(--ink); }
+@media (max-width: 640px) { .nav ul li:not(:last-child) { display: none; } }
+
+/* ── hero ── */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 40px; align-items: center; padding-block: 72px 64px; }
+@media (max-width: 920px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); padding-block: 48px; } }
+.hero h1 { font-size: clamp(50px, 6.6vw, 100px); overflow-wrap: anywhere; line-height: .86; font-weight: 800; font-variation-settings: "wdth" 75; letter-spacing: -0.035em; }
+.hero h1 span { display: block; color: var(--accent); }
+.hero .role { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.tag { font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--sheet); }
+.tag.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.hero .copy { display: grid; gap: 28px; min-width: 0; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 12px; font-weight: 600; font-size: 16px; text-decoration: none; border: 1px solid var(--line); background: var(--sheet); color: var(--ink); cursor: pointer; }
+.btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.btn:hover { transform: translateY(-1px); }
+.btn svg { width: 18px; height: 18px; }
+
+.stage { position: relative; height: 600px; min-width: 0; }
+@media (max-width: 920px) { .stage { height: 560px; } }
+.stage .phone { position: absolute; }
+.stage .p1 { left: 4%; top: 30px; transform: rotate(-5deg); animation: float 7s ease-in-out infinite; }
+.stage .p2 { right: 2%; top: 0; transform: rotate(4deg); animation: float 7s ease-in-out -3.5s infinite; }
+.stage .note { position: absolute; left: 30%; bottom: 6px; width: 290px; z-index: 3; }
+@keyframes float { 50% { translate: 0 -10px; } }
+@media (max-width: 560px) {
+  .stage { height: 520px; }
+  .stage .p1 { left: -6%; transform: rotate(-5deg) scale(.82); transform-origin: top left; }
+  .stage .p2 { right: -8%; transform: rotate(4deg) scale(.82); transform-origin: top right; }
+  .stage .note { left: 50%; translate: -50% 0; transform: scale(.9); }
+}
+
+/* ── sections ── */
+section { padding-block: 96px; border-bottom: 1px solid var(--line); }
+@media (max-width: 720px) { section { padding-block: 64px; } }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: end; margin-bottom: 48px; }
+@media (max-width: 860px) { .sec-head { grid-template-columns: minmax(0, 1fr); } }
+.sec-head .label { margin-bottom: 14px; display: block; }
+
+/* project header */
+.project { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 18px; background: var(--sheet); overflow: hidden; margin-bottom: 56px; }
+.project > div { padding: 20px 22px; border-right: 1px solid var(--line); display: grid; gap: 6px; min-width: 0; }
+.project > div:last-child { border-right: 0; }
+.project b { font-family: var(--f-display); font-size: 19px; font-weight: 600; letter-spacing: -0.01em; }
+@media (max-width: 760px) { .project { grid-template-columns: repeat(2, minmax(0, 1fr)); } .project > div:nth-child(2) { border-right: 0; } .project > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }
+
+.stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; margin-top: 56px; border-top: 1px solid var(--line); }
+.stats div { padding: 22px 16px 0 0; display: grid; gap: 4px; min-width: 0; }
+.stats strong { font-family: var(--f-display); font-size: clamp(40px, 5vw, 64px); line-height: 1; font-weight: 700; font-variation-settings: "wdth" 80; font-variant-numeric: tabular-nums; }
+@media (max-width: 760px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; } }
+
+/* EMBER showcase band */
+.ember-band { background: var(--e-canvas); border-radius: 28px; padding: 32px; transition: background .35s ease; position: relative; overflow: hidden; }
+@media (max-width: 720px) { .ember-band { padding: 20px 12px; border-radius: 20px; } }
+.band-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 28px; color: var(--e-text); font-family: var(--e-sans); }
+.band-bar .t { font-family: var(--e-serif); font-size: 26px; font-weight: 600; }
+.band-bar .s { color: var(--e-text-2); font-size: 15px; }
+.mode { margin-left: auto; display: inline-flex; padding: 4px; background: var(--e-sunken); border-radius: 999px; gap: 4px; }
+.mode button { font: 500 14px var(--e-sans); border: 0; background: transparent; color: var(--e-text-2); padding: 8px 16px; border-radius: 999px; cursor: pointer; }
+.mode button[aria-pressed="true"] { background: var(--e-raised); color: var(--e-text); box-shadow: 0 1px 2px rgba(90,58,34,.1); }
+.phones { display: grid; grid-template-columns: repeat(auto-fit, 256px); justify-content: center; gap: 24px; }
+.phones .phone { zoom: .9; }
+@media (min-width: 560px) and (max-width: 1180px) { .phones { grid-template-columns: repeat(2, 256px); } }
+.phones .phone:nth-child(even) { margin-top: 36px; }
+@media (max-width: 640px) { .phones .phone:nth-child(even) { margin-top: 0; } }
+
+/* ── EMBER phone mockups ── */
+.phone { width: 284px; height: 600px; border-radius: 44px; padding: 8px; background: #0B0D10; box-shadow: var(--e-shadow); flex: none; }
+.screen { width: 100%; height: 100%; border-radius: 36px; overflow: hidden; background: var(--e-canvas); color: var(--e-text); font-family: var(--e-sans); font-size: 13px; line-height: 1.4; display: flex; flex-direction: column; position: relative; transition: background .35s ease, color .35s ease; }
+.sb { display: flex; justify-content: space-between; align-items: center; padding: 14px 22px 6px; font-weight: 600; font-size: 12px; }
+.sb i { display: inline-block; width: 15px; height: 8px; border-radius: 2px; background: var(--e-text); margin-left: 4px; }
+.sc { flex: 1; padding: 6px 16px 0; display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+.e-caps { font-family: var(--e-mono); font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--e-text-2); }
+.e-h { font-family: var(--e-serif); font-weight: 600; font-size: 23px; line-height: 1.15; letter-spacing: -0.01em; }
+.e-hs { font-family: var(--e-serif); font-weight: 600; font-size: 17px; }
+.e-sub { color: var(--e-text-2); font-size: 12px; }
+.e-mono { font-family: var(--e-mono); }
+.aibar { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 999px; background: var(--e-raised); border: 1.5px solid transparent;
+  background-image: linear-gradient(var(--e-raised), var(--e-raised)), linear-gradient(90deg, #E0A03A, #C4572B, #E8A798);
+  background-origin: border-box; background-clip: padding-box, border-box; color: var(--e-text-2); font-size: 11.5px; }
+.aibar .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--e-brand); flex: none; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { padding: 5px 10px; border-radius: 999px; border: 1px solid var(--e-border); background: var(--e-surface); font-size: 11px; }
+.chip.on { border-color: var(--e-brand); color: var(--e-brand); background: color-mix(in srgb, var(--e-brand) 12%, transparent); }
+.card { background: var(--e-surface); border: 1px solid var(--e-border); border-radius: 18px; padding: 12px; display: grid; gap: 8px; }
+.photo { height: 104px; border-radius: 12px; background: radial-gradient(120% 90% at 20% 110%, var(--e-r-medium), var(--e-r-mdark) 55%, var(--e-r-dark)); position: relative; overflow: hidden; }
+.photo svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.row { display: flex; align-items: center; gap: 8px; }
+.sp { flex: 1; }
+.badge { padding: 3px 8px; border-radius: 999px; font-size: 10.5px; }
+.b-ok { background: color-mix(in srgb, var(--e-success) 16%, transparent); color: var(--e-success); }
+.b-or { background: color-mix(in srgb, var(--e-moss) 16%, transparent); color: var(--e-moss); }
+.b-pr { background: color-mix(in srgb, var(--e-honey) 18%, transparent); color: var(--e-text); }
+.price { color: var(--e-brand); font-family: var(--e-mono); font-size: 12px; }
+.tray { display: flex; justify-content: space-between; align-items: center; padding: 10px 22px 22px; background: var(--e-surface); border-top: 1px solid var(--e-border); margin-top: auto; }
+.tray i { width: 20px; height: 20px; border-radius: 50%; border: 1.8px solid var(--e-text-2); display: block; }
+.tray i.on { border-color: var(--e-brand); }
+.bean { width: 46px; height: 46px; border-radius: 23px 23px 6px 23px; background: var(--e-brand); display: grid; place-items: center; box-shadow: 0 6px 16px rgba(196,87,43,.35); }
+.bean svg { width: 20px; height: 20px; }
+.fresh { display: grid; gap: 6px; }
+.track { height: 7px; border-radius: 4px; background: var(--e-sunken); position: relative; overflow: hidden; }
+.track b { position: absolute; inset: 0 auto 0 0; border-radius: 4px; }
+.track .win { position: absolute; top: 0; bottom: 0; background: color-mix(in srgb, var(--e-moss) 28%, transparent); }
+.hero-img { height: 210px; margin: 0 -16px; background: radial-gradient(130% 100% at 30% 120%, var(--e-r-medium), var(--e-r-mdark) 50%, var(--e-r-dark)); display: grid; place-items: center; position: relative; overflow: hidden; }
+.bag { width: 104px; height: 142px; border-radius: 16px; background: var(--e-surface); box-shadow: 0 18px 40px rgba(0,0,0,.35); display: grid; place-content: center; text-align: center; gap: 2px; position: relative; z-index: 1; color: var(--e-text); }
+.buy { display: flex; gap: 8px; padding: 10px 16px 22px; background: var(--e-surface); border-top: 1px solid var(--e-border); margin-top: auto; align-items: center; }
+.e-btn { flex: 1; text-align: center; padding: 10px 12px; border-radius: 999px; background: var(--e-brand); color: #fff; font-weight: 600; font-size: 12.5px; }
+.e-btn.ghost { background: transparent; color: var(--e-brand); border: 1.5px solid var(--e-brand); }
+.stepper { display: inline-flex; align-items: center; gap: 10px; padding: 4px; border-radius: 999px; border: 1px solid var(--e-border); font-family: var(--e-mono); }
+.stepper span { width: 26px; height: 26px; border-radius: 50%; background: var(--e-sunken); display: grid; place-items: center; }
+.bub { max-width: 82%; padding: 9px 12px; border-radius: 16px; font-size: 12px; }
+.bub.me { align-self: flex-end; background: var(--e-brand); color: #fff; border-bottom-right-radius: 5px; }
+.bub.ai { align-self: flex-start; background: var(--e-surface); border: 1px solid var(--e-border); border-bottom-left-radius: 5px; }
+.somm { border-radius: 16px; padding: 11px; background: var(--e-raised); border: 1.5px solid transparent;
+  background-image: linear-gradient(var(--e-raised), var(--e-raised)), linear-gradient(120deg, #E0A03A, #C4572B, #E8A798);
+  background-origin: border-box; background-clip: padding-box, border-box; display: grid; gap: 8px; box-shadow: var(--e-shadow); }
+.av { width: 30px; height: 30px; border-radius: 15px 15px 15px 5px; background: var(--e-brand); display: grid; place-items: center; flex: none; }
+.av svg { width: 15px; height: 15px; }
+.thumb { width: 38px; height: 38px; border-radius: 10px; background: var(--e-r-mdark); flex: none; }
+.steps { display: grid; gap: 6px; width: 100%; }
+.steps div { display: flex; gap: 8px; align-items: center; padding: 8px 10px; border-radius: 12px; font-size: 12px; }
+.steps .now { background: color-mix(in srgb, var(--e-brand) 10%, transparent); border: 1px solid var(--e-brand); font-weight: 600; }
+.steps .done { color: var(--e-text); }
+.steps .next { color: var(--e-text-2); }
+.steps em { font-style: normal; margin-left: auto; font-family: var(--e-mono); color: var(--e-text-2); font-size: 11px; }
+
+/* desktop mockup, scaled to fit */
+.desk-wrap { margin-top: 40px; position: relative; }
+.desk { width: 1120px; transform-origin: top left; border-radius: 18px; overflow: hidden; background: var(--e-canvas); color: var(--e-text); font-family: var(--e-sans); font-size: 13px; display: grid; grid-template-columns: 72px 1fr; box-shadow: var(--e-shadow); border: 1px solid var(--e-border); transition: background .35s ease, color .35s ease; }
+.rail { background: var(--e-surface); border-right: 1px solid var(--e-border); display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 20px 0; }
+.rail .logo { width: 36px; height: 36px; border-radius: 18px 18px 5px 18px; background: var(--e-brand); color: #fff; display: grid; place-items: center; font-family: var(--e-serif); font-weight: 600; }
+.rail i { width: 22px; height: 22px; border-radius: 7px; border: 1.8px solid var(--e-text-2); display: block; }
+.rail i.on { border-color: var(--e-brand); background: color-mix(in srgb, var(--e-brand) 14%, transparent); }
+.dmain { padding: 22px 28px; display: grid; gap: 16px; min-width: 0; }
+.dtop { display: flex; align-items: center; gap: 12px; }
+.dtop .e-h { font-size: 30px; }
+.pill { padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 12.5px; }
+.pill.p { background: var(--e-brand); color: #fff; }
+.pill.ai { background: var(--e-raised); border: 1.5px solid transparent; background-image: linear-gradient(var(--e-raised), var(--e-raised)), linear-gradient(90deg, #E0A03A, #C4572B, #E8A798); background-origin: border-box; background-clip: padding-box, border-box; }
+.tl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.tl div { padding: 12px 14px; border-radius: 14px; border: 1px solid var(--e-border); background: var(--e-surface); display: grid; gap: 4px; }
+.tl .live { border: 2px solid var(--e-brand); }
+.bento { display: grid; grid-template-columns: 1.7fr 1fr .8fr; gap: 14px; }
+.chart svg { width: 100%; height: 190px; display: block; }
+.statrow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.statrow div { background: var(--e-sunken); border-radius: 12px; padding: 9px 11px; display: grid; }
+.statrow b { font-family: var(--e-mono); font-weight: 500; font-size: 18px; }
+.jars { display: flex; gap: 14px; justify-content: center; align-items: flex-end; padding-top: 6px; }
+.jar { width: 46px; height: 118px; border-radius: 14px 14px 18px 18px; background: var(--e-sunken); border: 1.5px solid var(--e-border); position: relative; overflow: hidden; }
+.jar b { position: absolute; left: 0; right: 0; bottom: 0; }
+.jar::before { content: ""; position: absolute; inset: 0 0 auto; height: 8px; background: var(--e-border); z-index: 1; }
+
+/* design system */
+.ds { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+@media (max-width: 900px) { .ds { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--sheet); border: 1px solid var(--line); border-radius: 22px; padding: 26px; display: grid; gap: 18px; align-content: start; min-width: 0; }
+.panel h3 { font-size: 20px; }
+.sw { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 10px; }
+.sw div { display: grid; gap: 6px; }
+.sw span { height: 56px; border-radius: 12px; border: 1px solid var(--line); }
+.sw code { font-family: var(--f-mono); font-size: 10px; color: var(--muted); overflow-wrap: anywhere; }
+.spec { display: grid; gap: 12px; }
+.spec div { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 14px; align-items: baseline; border-bottom: 1px dashed var(--line); padding-bottom: 12px; }
+.spec div:last-child { border-bottom: 0; padding-bottom: 0; }
+.comp-band { background: var(--e-canvas); border-radius: 18px; padding: 20px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; color: var(--e-text); font-family: var(--e-sans); font-size: 13px; }
+.comp-band .e-btn { flex: none; padding: 10px 18px; }
+.tgl { width: 44px; height: 26px; border-radius: 13px; background: var(--e-brand); position: relative; flex: none; }
+.tgl::after { content: ""; position: absolute; right: 3px; top: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; }
+.seg { display: inline-flex; padding: 3px; gap: 2px; background: var(--e-sunken); border-radius: 999px; }
+.seg span { padding: 6px 12px; border-radius: 999px; color: var(--e-text-2); }
+.seg .on { background: var(--e-raised); color: var(--e-text); box-shadow: 0 1px 2px rgba(90,58,34,.12); }
+.widgets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 24px; }
+@media (max-width: 980px) { .widgets { grid-template-columns: minmax(0, 1fr); } }
+.widget { background: var(--e-canvas); border-radius: 22px; padding: 22px; color: var(--e-text); font-family: var(--e-sans); display: grid; gap: 12px; align-content: start; min-width: 0; }
+.widget .card { padding: 16px; }
+#wheel { width: 100%; max-width: 260px; justify-self: center; display: block; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--e-text-2); }
+.legend span::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: var(--c); }
+.wcap { font-family: var(--f-mono); font-size: 11px; color: var(--muted); letter-spacing: .04em; }
+
+/* craft list */
+.craft { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); }
+.craft div { padding: 28px 28px 0 0; display: grid; gap: 10px; align-content: start; min-width: 0; }
+@media (max-width: 860px) { .craft { grid-template-columns: minmax(0, 1fr); } .craft div { padding-right: 0; } }
+
+/* next */
+.next { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px; align-items: stretch; }
+@media (max-width: 860px) { .next { grid-template-columns: minmax(0, 1fr); } }
+.nova { border-radius: 24px; border: 1px dashed var(--accent); padding: 32px; display: grid; gap: 18px; align-content: start; background: repeating-linear-gradient(135deg, transparent 0 14px, var(--grid) 14px 15px), var(--sheet); }
+.nova h3 { font-size: 40px; font-variation-settings: "wdth" 80; }
+.status { display: inline-flex; align-items: center; gap: 8px; }
+.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .3; } }
+.list { display: grid; gap: 0; }
+.list div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.list div:last-child { border-bottom: 0; }
+
+/* contact */
+.contact h2 { font-size: clamp(48px, 9vw, 120px); font-weight: 800; font-variation-settings: "wdth" 75; letter-spacing: -0.035em; line-height: .9; }
+.contact h2 span { color: var(--accent); }
+.links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 40px; }
+.links a { display: grid; align-content: start; padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--sheet); text-decoration: none; font-family: var(--f-display); font-weight: 600; font-size: 22px; }
+.links a:hover { border-color: var(--accent); color: var(--accent); }
+.links small { font-family: var(--f-mono); font-size: 11px; color: var(--muted); font-weight: 400; overflow-wrap: anywhere; }
+.links > * { min-width: 0; gap: 12px; }
+.links .off { display: grid; align-content: start; padding: 22px; border: 1px dashed var(--line); border-radius: 16px; font-family: var(--f-display); font-weight: 600; font-size: 22px; color: var(--muted); }
+.links .mail { display: grid; gap: 10px; padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--sheet); font-family: var(--f-display); font-weight: 600; font-size: 22px; }
+.links .mail div { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.links .mail code { font-family: var(--f-mono); font-size: 12px; font-weight: 400; color: var(--ink); user-select: all; overflow-wrap: anywhere; }
+.links .mail button { font: 500 12px var(--f-mono); padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; flex: none; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 28px; }
+
+/* ── HELIX showcase (its own tokens: Abyss dark / Frost light) ── */
+.helix {
+  --h-bg: #05070D; --h-glass: rgba(255,255,255,.07); --h-glass2: rgba(255,255,255,.11); --h-edge: rgba(255,255,255,.14);
+  --h-text: #F2F5FF; --h-text2: #8E98B8; --h-text3: #566079;
+  --h-mint: #3DFFB5; --h-cyan: #38E1FF; --h-violet: #8B7BFF; --h-lime: #C6FF3D; --h-magenta: #FF4FD8; --h-amber: #FFB23D; --h-red: #FF5A6E;
+  --h-glow: .55; --h-ui: "Inter", system-ui, sans-serif; --h-metric: "Unbounded", "Arial Black", sans-serif; --h-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+.helix[data-mode="light"] {
+  --h-bg: #EEF2F7; --h-glass: rgba(255,255,255,.62); --h-glass2: rgba(255,255,255,.8); --h-edge: rgba(11,16,32,.09);
+  --h-text: #0B1020; --h-text2: #55607A; --h-text3: #8A93A8;
+  --h-mint: #0FA86F; --h-cyan: #0A84B8; --h-violet: #6B5BE0; --h-lime: #5E8A00; --h-magenta: #C42AA3; --h-amber: #B86E00; --h-red: #D62A42; --h-glow: .25;
+}
+.hx-band { background: var(--h-bg); border-radius: 28px; padding: 32px; position: relative; overflow: hidden; color: var(--h-text); font-family: var(--h-ui); transition: background .4s ease, color .4s ease; }
+@media (max-width: 720px) { .hx-band { padding: 20px 12px; border-radius: 20px; } }
+.hx-band::before, .hx-band::after { content: ""; position: absolute; border-radius: 50%; filter: blur(90px); opacity: .45; pointer-events: none; }
+.hx-band::before { width: 520px; height: 420px; left: -120px; top: -140px; background: var(--h-cyan); }
+.hx-band::after { width: 520px; height: 420px; right: -120px; bottom: -160px; background: var(--h-violet); }
+.helix[data-mode="light"].hx-band::before, .helix[data-mode="light"].hx-band::after { opacity: .22; }
+.hx-bar { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 28px; }
+.hx-bar .t { font-family: var(--h-metric); font-weight: 500; font-size: 22px; letter-spacing: -0.02em; }
+.hx-bar .s { color: var(--h-text2); font-size: 15px; }
+.hx-mode { margin-left: auto; display: inline-flex; padding: 4px; gap: 4px; border-radius: 999px; background: var(--h-glass); border: 1px solid var(--h-edge); backdrop-filter: blur(16px); }
+.hx-mode button { font: 500 14px var(--h-ui); border: 0; background: transparent; color: var(--h-text2); padding: 8px 16px; border-radius: 999px; cursor: pointer; }
+.hx-mode button[aria-pressed="true"] { background: var(--h-glass2); color: var(--h-text); box-shadow: inset 0 1px 0 rgba(255,255,255,.35); }
+.hx-phones { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(auto-fit, 256px); justify-content: center; gap: 28px; }
+.hx-phones .phone { zoom: .9; }
+.hx-phones .phone:nth-child(2) { margin-top: 36px; }
+@media (max-width: 640px) { .hx-phones .phone:nth-child(2) { margin-top: 0; } }
+.hx-screen { width: 100%; height: 100%; border-radius: 36px; overflow: hidden; background: var(--h-bg); color: var(--h-text); font-family: var(--h-ui); font-size: 13px; line-height: 1.4; display: flex; flex-direction: column; position: relative; transition: background .4s ease, color .4s ease; }
+.hx-screen .au { position: absolute; border-radius: 50%; filter: blur(46px); opacity: calc(var(--h-glow) * .9); pointer-events: none; }
+.hx-screen > *:not(.au) { position: relative; z-index: 1; }
+.hx-sb { display: flex; justify-content: space-between; align-items: center; padding: 14px 22px 4px; font-weight: 600; font-size: 12px; }
+.hx-sb i { display: inline-block; width: 15px; height: 8px; border-radius: 2px; background: var(--h-text); margin-left: 4px; }
+.hx-sc { flex: 1; padding: 6px 14px 0; display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+.hx-caps { font-family: var(--h-mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--h-text2); }
+.hx-title { font-weight: 700; font-size: 22px; line-height: 1.15; letter-spacing: -0.01em; }
+.hx-sub { color: var(--h-text2); font-size: 11.5px; }
+.hx-mono { font-family: var(--h-mono); }
+.hx-glass { background: var(--h-glass); border: 1px solid var(--h-edge); border-radius: 20px; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: inset 0 1px 0 rgba(255,255,255,.18); }
+.hx-orb { position: relative; width: 176px; height: 176px; align-self: center; }
+.hx-orb .halo { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--h-mint) 55%, transparent), transparent 68%); }
+.hx-orb .sphere { position: absolute; inset: 24px; border-radius: 50%; background: var(--h-glass2); border: 1px solid var(--h-edge); overflow: hidden; backdrop-filter: blur(14px); box-shadow: inset 0 2px 0 rgba(255,255,255,.4); }
+.hx-orb .fluid { position: absolute; left: 0; right: 0; bottom: 0; height: 74%; background: linear-gradient(to top, color-mix(in srgb, var(--h-mint) 60%, transparent), color-mix(in srgb, var(--h-mint) 14%, transparent)); }
+.hx-orb .shine { position: absolute; left: 26%; top: 12%; width: 48%; height: 22%; border-radius: 50%; background: linear-gradient(rgba(255,255,255,.45), rgba(255,255,255,0)); }
+.hx-orb .val { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+.hx-orb b { font-family: var(--h-metric); font-weight: 400; font-size: 42px; line-height: 1; letter-spacing: -0.03em; }
+.hx-orb small { font-family: var(--h-mono); font-size: 9px; letter-spacing: .12em; color: var(--h-mint); margin-top: 6px; }
+.hx-rings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.hx-rings > div { padding: 8px 4px; display: grid; justify-items: center; gap: 2px; }
+.hx-rings svg { width: 50px; height: 50px; }
+.hx-coach { padding: 12px; display: grid; gap: 8px; border: 1.5px solid transparent;
+  background: linear-gradient(var(--h-bg), var(--h-bg)) padding-box, linear-gradient(120deg, var(--h-cyan), var(--h-violet)) border-box; border-radius: 18px; }
+.helix[data-mode="light"] .hx-coach { background: linear-gradient(#fff, #fff) padding-box, linear-gradient(120deg, var(--h-cyan), var(--h-violet)) border-box; }
+.hx-av { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, #38E1FF, #8B7BFF); display: grid; place-items: center; flex: none; }
+.hx-av svg { width: 13px; height: 13px; }
+.hx-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.hx-chip { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 999px; font-size: 10.5px; border: 1px solid; }
+.hx-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.hx-row { display: flex; align-items: center; gap: 8px; }
+.hx-tab { margin: auto 10px 18px; padding: 7px; display: flex; justify-content: space-between; align-items: center; border-radius: 999px; }
+.hx-tab span { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; }
+.hx-tab span.on { width: auto; padding: 0 12px; border-radius: 999px; background: var(--h-glass2); color: var(--h-cyan); font-weight: 600; font-size: 11px; gap: 5px; display: inline-flex; align-items: center; }
+.hx-tab svg { width: 17px; height: 17px; }
+.hx-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.hx-tiles > div { padding: 9px; display: grid; gap: 2px; border-radius: 14px; }
+.hx-tiles b { font-family: var(--h-metric); font-weight: 500; font-size: 15px; letter-spacing: -0.02em; }
+.hx-card { padding: 12px; display: grid; gap: 8px; }
+.hx-badge { font-family: var(--h-mono); font-size: 9.5px; padding: 3px 7px; border-radius: 999px; }
+.hx-chart svg { width: 100%; display: block; }
+.hx-bar3 { display: flex; gap: 3px; height: 8px; }
+.hx-bar3 span { border-radius: 4px; }
+.hx-list > div { display: flex; align-items: center; gap: 8px; padding: 9px 2px; border-bottom: 1px solid var(--h-edge); }
+.hx-list > div:last-child { border-bottom: 0; }
+.hx-ic { width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; flex: none; }
+.hx-extra { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 24px; margin-top: 36px; }
+.hx-island { background: #000; color: #F2F5FF; border-radius: 40px; padding: 16px 22px 18px; width: 340px; max-width: 100%; display: grid; gap: 10px; font-family: var(--h-ui); }
+.hx-island .zones { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; }
+.hx-island .zones span { height: 8px; border-radius: 4px; background: rgba(255,79,216,.22); }
+.hx-island .zones span.on { background: #FF4FD8; box-shadow: 0 0 14px rgba(255,79,216,.7); }
+.hx-widget { width: 156px; height: 156px; border-radius: 26px; padding: 14px; display: grid; align-content: space-between; background: linear-gradient(135deg, #0B1020, #141A2E); border: 1px solid rgba(255,255,255,.14); color: #F2F5FF; font-family: var(--h-ui); }
+.hx-hues { display: grid; grid-template-columns: repeat(3, auto); gap: 12px 20px; font-size: 12.5px; color: var(--h-text2); }
+.hx-hues span { display: inline-flex; align-items: center; gap: 8px; }
+.hx-hues i { width: 12px; height: 12px; border-radius: 50%; background: var(--c); box-shadow: 0 0 12px color-mix(in srgb, var(--c) calc(var(--h-glow) * 100%), transparent); }
+</style>
+</head>
+<body>
+
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top"><i>II</i>Izzatilla</a>
+    <ul>
+      <li><a href="#work">EMBER</a></li>
+      <li><a href="#helix">HELIX</a></li>
+      <li><a href="#system">System</a></li>
+      <li><a href="#next">In progress</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="copy">
+        <div class="role">
+          <span class="tag on">UI kit designer</span>
+          <span class="tag">Figma</span>
+          <span class="tag">Design systems</span>
+        </div>
+        <h1>Izzatilla <span>Ibrohimjonoff</span></h1>
+        <p class="lead">I design production-ready UI kits for marketplaces and SaaS: tokens, components with every state, and full screen flows in light and dark.</p>
+        <div class="cta">
+          <a class="btn primary" href="#work">See EMBER
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="stage ember" aria-label="EMBER app mockups">
+        <div class="phone p1">
+          <div class="screen">
+            <div class="sb"><span>9:41</span><span><i></i><i></i></span></div>
+            <div class="sc">
+              <div class="e-sub">Good morning</div>
+              <div class="e-h">Find your next cup</div>
+              <div class="aibar"><span class="dot"></span>Ask Ember: fruity, under $20</div>
+              <div class="chips"><span class="chip on">Fruity</span><span class="chip">Light roast</span><span class="chip">Under $25</span></div>
+              <div class="e-caps">Fresh this week</div>
+              <div class="card">
+                <div class="photo"><svg viewBox="0 0 240 104" preserveAspectRatio="none" fill="none" stroke="rgba(255,255,255,.14)"><ellipse cx="40" cy="120" rx="140" ry="80"/><ellipse cx="60" cy="120" rx="90" ry="50"/><ellipse cx="220" cy="0" rx="90" ry="60"/></svg></div>
+                <div class="e-hs">Guji Natural</div>
+                <div class="e-sub">Heirloom · 2,100 m · Ethiopia</div>
+                <div class="row"><span class="badge b-ok">Peak freshness</span><span class="sp"></span><span class="e-mono">SCA 88.5</span></div>
+                <div class="price">$24 / 250 g</div>
+              </div>
+            </div>
+            <div class="tray"><i></i><i class="on"></i><span class="bean"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg></span><i></i><i></i></div>
+          </div>
+        </div>
+
+        <div class="phone p2">
+          <div class="screen">
+            <div class="sb"><span>9:41</span><span><i></i><i></i></span></div>
+            <div class="sc">
+              <div class="hero-img">
+                <svg viewBox="0 0 280 210" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%" fill="none" stroke="rgba(255,255,255,.12)"><ellipse cx="40" cy="230" rx="200" ry="110"/><ellipse cx="260" cy="10" rx="130" ry="80"/><ellipse cx="260" cy="10" rx="80" ry="46"/></svg>
+                <div class="bag"><span class="e-caps" style="color:var(--e-brand)">Ember</span><span class="e-h" style="font-size:26px">Guji</span><span class="e-sub">Natural · 250 g</span></div>
+              </div>
+              <div class="e-caps">Ethiopia · Guji · 2,100 m</div>
+              <div class="row"><span class="e-h" style="font-size:21px">Guji Natural</span><span class="sp"></span><span class="e-mono" style="font-size:18px;color:var(--e-brand)">$24</span></div>
+              <div class="chips"><span class="badge b-or">Ethiopia</span><span class="badge b-pr">Natural</span><span class="badge b-ok">Peak</span></div>
+              <div class="card fresh">
+                <span class="e-caps">Freshness</span>
+                <span class="e-mono" style="font-size:20px">Day 6</span>
+                <div class="track"><span class="win" style="left:9%;width:38%"></span><b style="width:14%;background:var(--e-success)"></b></div>
+                <span style="color:var(--e-success);font-size:11.5px">Peak flavor window</span>
+              </div>
+            </div>
+            <div class="buy"><span class="stepper"><span>−</span>2<span>+</span></span><span class="e-btn">Add to bag · $24</span></div>
+          </div>
+        </div>
+
+        <div class="note somm" style="font-family:var(--e-sans);color:var(--e-text);font-size:12.5px">
+          <div class="row"><span class="av"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg></span><div><div style="font-weight:600">Ember</div><div class="e-caps">AI sommelier</div></div></div>
+          <div>Try Guji Natural: blueberry and jasmine, at its peak on day 6.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="label">Featured project · UI kit · 2026</span>
+          <h2>EMBER: AI-native coffee roastery & marketplace</h2>
+        </div>
+        <p class="lead">A Figma kit for specialty coffee with three products in one system: a buyer app, a web storefront and a roaster console. An AI sommelier called Ember runs through all three.</p>
+      </div>
+
+      <div class="project">
+        <div><span class="label">Role</span><b>Concept, UI, design system</b></div>
+        <div><span class="label">Platforms</span><b>Mobile 390 · Desktop 1440</b></div>
+        <div><span class="label">Themes</span><b>Crema & Night Roast</b></div>
+        <div><span class="label">Made for</span><b>UI8 marketplace</b></div>
+      </div>
+
+      <div class="ember ember-band" id="emberBand" data-mode="light">
+        <div class="band-bar">
+          <span class="t">Buyer app</span>
+          <span class="s">Taste quiz to brew timer, with Ember on every screen</span>
+          <div class="mode" role="group" aria-label="EMBER theme">
+            <button type="button" id="modeLight" aria-pressed="true">Crema</button>
+            <button type="button" id="modeDark" aria-pressed="false">Night Roast</button>
+          </div>
+        </div>
+
+        <div class="phones">
+          <!-- Taste profile -->
+          <div class="phone"><div class="screen">
+            <div class="sb"><span>9:41</span><span><i></i><i></i></span></div>
+            <div class="sc">
+              <div class="card" style="text-align:center;justify-items:center;background:color-mix(in srgb,var(--e-honey) 14%,var(--e-surface));border:0;padding:18px 12px">
+                <span class="e-caps" style="color:var(--e-brand)">You are a</span>
+                <span class="e-h" style="font-size:27px">Fruit Forager</span>
+                <span class="e-sub">Bright, juicy coffees with floral lift.</span>
+                <div class="chips" style="justify-content:center"><span class="chip on">Blueberry</span><span class="chip on">Jasmine</span></div>
+              </div>
+              <svg class="mini-wheel" viewBox="0 0 200 200" style="width:150px;height:150px;align-self:center" aria-hidden="true"></svg>
+              <span class="e-caps">Top matches</span>
+              <div class="card" style="grid-template-columns:auto 1fr;align-items:center;padding:9px"><span class="thumb"></span><div><div style="font-weight:600">Guji Natural</div><div class="price">96% match · $24</div></div></div>
+              <div class="card" style="grid-template-columns:auto 1fr;align-items:center;padding:9px"><span class="thumb" style="background:var(--e-r-light)"></span><div><div style="font-weight:600">Huehue Honey</div><div class="price">91% match · $23</div></div></div>
+            </div>
+            <div class="buy"><span class="e-btn">Shop my matches</span></div>
+          </div></div>
+
+          <!-- Brew timer -->
+          <div class="phone"><div class="screen">
+            <div class="sb"><span>9:41</span><span><i></i><i></i></span></div>
+            <div class="sc" style="align-items:center">
+              <div class="e-hs">V60 · Guji Natural</div>
+              <div class="chips"><span class="chip e-mono">18 g</span><span class="chip e-mono">1:16</span><span class="chip e-mono">94°C</span></div>
+              <svg viewBox="0 0 200 200" style="width:190px;height:190px" aria-label="Brew timer at 1:42">
+                <circle cx="100" cy="100" r="88" fill="none" stroke="var(--e-sunken)" stroke-width="12"/>
+                <circle cx="100" cy="100" r="88" fill="none" stroke="var(--e-brand)" stroke-width="12" stroke-linecap="round" stroke-dasharray="298 553" transform="rotate(-90 100 100)"/>
+                <text x="100" y="78" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" letter-spacing="1" fill="var(--e-brand)">POUR 2 OF 3</text>
+                <text x="100" y="114" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="44" font-weight="500" fill="var(--e-text)">1:42</text>
+                <text x="100" y="138" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="11" fill="var(--e-text-2)">180 / 288 g water</text>
+              </svg>
+              <div class="steps">
+                <div class="done"><span style="color:var(--e-success)">✓</span>Bloom<em>0:00 · 50 g</em></div>
+                <div class="done"><span style="color:var(--e-success)">✓</span>Pour 1<em>0:45 · 150 g</em></div>
+                <div class="now"><span style="color:var(--e-brand)">●</span>Pour 2<em>1:15 · 220 g</em></div>
+                <div class="next"><span>○</span>Pour 3<em>1:50 · 288 g</em></div>
+              </div>
+            </div>
+            <div class="buy"><span class="e-btn ghost">Pause</span><span class="e-btn">Next pour</span></div>
+          </div></div>
+
+          <!-- Ember chat -->
+          <div class="phone"><div class="screen">
+            <div class="sb"><span>9:41</span><span><i></i><i></i></span></div>
+            <div class="row" style="padding:4px 16px 10px;border-bottom:1px solid var(--e-border)"><span class="av"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg></span><div><div style="font-weight:600">Ember</div><div class="e-sub">Your coffee sommelier</div></div></div>
+            <div class="sc" style="padding-top:12px">
+              <div class="bub me">I brew V60 every morning. Fruity, but not too sour?</div>
+              <div class="bub ai">You like sweet fruit more than sharp acidity. Here is this week's pick:</div>
+              <div class="somm">
+                <div class="row"><span class="thumb"></span><div><div style="font-weight:600">Guji Natural</div><div class="price">$24 / 250 g</div></div><span class="sp"></span><span class="e-btn" style="flex:none;padding:7px 12px">Add</span></div>
+                <div class="e-sub">Matches 4 of your 5 favorite notes.</div>
+              </div>
+              <div class="bub me">What grind and temperature?</div>
+            </div>
+            <div style="padding:10px 14px 22px"><div class="aibar"><span class="dot"></span>Message Ember…</div></div>
+          </div></div>
+
+          <!-- Checkout -->
+          <div class="phone"><div class="screen">
+            <div class="sb"><span>9:41</span><span><i></i><i></i></span></div>
+            <div class="sc">
+              <div class="e-hs" style="text-align:center">Checkout</div>
+              <div class="chips"><span class="badge b-ok">✓ Bag</span><span class="badge b-ok">✓ Delivery</span><span class="badge" style="background:var(--e-brand);color:#fff">Payment</span></div>
+              <div class="card">
+                <div class="row"><span class="thumb"></span><div><div style="font-weight:600">Guji Natural</div><div class="e-sub">250 g · Pour-over · ×2</div></div><span class="sp"></span><span class="e-mono">$48.00</span></div>
+                <div class="row"><span class="thumb" style="background:var(--e-r-medium)"></span><div><div style="font-weight:600">Huila Washed</div><div class="e-sub">250 g · Espresso · ×1</div></div><span class="sp"></span><span class="e-mono">$22.00</span></div>
+                <div style="height:1px;background:var(--e-border)"></div>
+                <div class="row"><span class="e-sub">Every 2 weeks · Tue</span><span class="sp"></span><span class="e-mono" style="color:var(--e-success)">Free</span></div>
+                <div class="row"><span>Total</span><span class="sp"></span><span class="e-mono" style="font-size:19px">$70.00</span></div>
+              </div>
+              <div class="card" style="gap:10px">
+                <div class="row"><span style="width:16px;height:16px;border-radius:50%;border:5px solid var(--e-brand)"></span>Apple Pay</div>
+                <div class="row"><span style="width:16px;height:16px;border-radius:50%;border:1.5px solid var(--e-border)"></span>Visa •••• 4417</div>
+              </div>
+              <div class="e-sub" style="color:var(--e-moss)">$31.50 of this order goes to farmers</div>
+            </div>
+            <div class="buy"><span class="e-btn">Pay $70.00</span></div>
+          </div></div>
+        </div>
+
+        <div class="desk-wrap" id="deskWrap">
+          <div class="desk" id="desk">
+            <div class="rail"><span class="logo">E</span><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="dmain">
+              <div class="dtop">
+                <div><div class="e-caps">Roastery / Today</div><div class="e-h">Today's roast</div></div>
+                <span class="sp"></span>
+                <span class="pill ai">Ask Ember ⌘K</span><span class="pill p">New batch</span>
+              </div>
+              <div class="tl">
+                <div><span class="e-caps" style="color:var(--e-success)">08:30 · Done</span>Guji Natural · 12 kg</div>
+                <div class="live"><span class="e-caps" style="color:var(--e-brand)">10:15 · Roasting</span>Huila Washed · 8 kg</div>
+                <div><span class="e-caps">13:00 · Queued</span>Sidamo Honey · 10 kg</div>
+                <div><span class="e-caps">15:30 · Queued</span>Kenya AA · 6 kg</div>
+              </div>
+              <div class="bento">
+                <div class="card chart" style="padding:16px">
+                  <div class="row"><span class="e-hs">Roast curve · Batch 0428</span><span class="sp"></span><span class="badge" style="background:color-mix(in srgb,var(--e-error) 14%,transparent);color:var(--e-error)">● LIVE 08:12</span></div>
+                  <svg viewBox="0 0 560 190" preserveAspectRatio="none" aria-label="Roast curve with bean temperature, rate of rise and Ember suggestion">
+                    <g stroke="var(--e-border)" stroke-width="1"><line x1="0" x2="560" y1="20" y2="20"/><line x1="0" x2="560" y1="65" y2="65"/><line x1="0" x2="560" y1="110" y2="110"/><line x1="0" x2="560" y1="155" y2="155"/></g>
+                    <line x1="365" x2="365" y1="0" y2="190" stroke="var(--e-brand)" stroke-opacity=".5"/>
+                    <text x="372" y="14" font-family="Geist Mono, monospace" font-size="9" letter-spacing="1" fill="var(--e-brand)">FIRST CRACK</text>
+                    <path d="M0 175 C50 190 90 145 140 108 C190 72 260 48 365 32 C430 22 500 18 560 14" fill="none" stroke="var(--e-brand)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M0 177 C60 188 110 138 170 100 C230 64 310 42 430 26 C490 20 520 16 560 10" fill="none" stroke="var(--e-honey)" stroke-width="2" stroke-dasharray="6 6"/>
+                    <path d="M0 70 C80 50 140 80 220 110 C300 140 400 160 560 170" fill="none" stroke="var(--e-moss)" stroke-width="2"/>
+                  </svg>
+                  <div class="statrow"><div><span class="e-caps">First crack</span><b>9:42</b></div><div><span class="e-caps">Development</span><b>18.5%</b></div><div><span class="e-caps">Drop</span><b>204.6°</b></div></div>
+                </div>
+                <div style="display:grid;gap:14px;align-content:start">
+                  <div class="card fresh" style="padding:16px"><span class="e-caps">Freshness</span><span class="e-mono" style="font-size:24px">Day 6</span><div class="track"><span class="win" style="left:9%;width:38%"></span><b style="width:14%;background:var(--e-success)"></b></div><span style="color:var(--e-success)">Peak flavor window</span></div>
+                  <div class="card fresh" style="padding:16px"><span class="e-caps">Freshness</span><span class="e-mono" style="font-size:24px">Day 24</span><div class="track"><span class="win" style="left:9%;width:38%"></span><b style="width:53%;background:var(--e-warning)"></b></div><span style="color:var(--e-warning)">Fading · drink soon</span></div>
+                </div>
+                <div class="card" style="padding:16px;align-content:start">
+                  <span class="e-hs">Green stock</span>
+                  <div class="jars">
+                    <div style="display:grid;gap:4px;justify-items:center"><div class="jar"><b style="height:78%;background:var(--e-r-medium)"></b></div><span class="e-mono" style="font-size:11px">78%</span></div>
+                    <div style="display:grid;gap:4px;justify-items:center"><div class="jar"><b style="height:30%;background:var(--e-warning)"></b></div><span class="e-mono" style="font-size:11px;color:var(--e-warning)">30%</span></div>
+                    <div style="display:grid;gap:4px;justify-items:center"><div class="jar"><b style="height:10%;background:var(--e-error)"></b></div><span class="e-mono" style="font-size:11px;color:var(--e-error)">10%</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div><strong>46</strong><span class="label">Screens, each light & dark</span></div>
+        <div><strong>171</strong><span class="label">Component variants</span></div>
+        <div><strong>89</strong><span class="label">Figma variables</span></div>
+        <div><strong>32</strong><span class="label">Line icons</span></div>
+        <div><strong>3</strong><span class="label">Prototype flows</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="system">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="label">Design system</span>
+          <h2>Tokens first, then every state</h2>
+        </div>
+        <p class="lead">Every color, gap and radius is a Figma variable. Light and dark share one set of names, so a screen switches theme by swapping a collection, not by redrawing it.</p>
+      </div>
+
+      <div class="ds">
+        <div class="panel">
+          <h3>Color tokens</h3>
+          <div class="sw" id="swatches"></div>
+        </div>
+        <div class="panel">
+          <h3>Type</h3>
+          <div class="spec">
+            <div><span class="label">Display</span><span style="font-family:var(--e-serif);font-size:40px;line-height:1">Fraunces</span></div>
+            <div><span class="label">Interface</span><span style="font-family:var(--e-sans);font-size:22px;font-weight:600">Instrument Sans</span></div>
+            <div><span class="label">Data</span><span style="font-family:var(--e-mono);font-size:19px">Geist Mono · 204.6°C</span></div>
+            <div><span class="label">Scale</span><span class="wcap">88 · 64 · 44 · 32 · 22 · 18 · 16 · 14 · 12</span></div>
+          </div>
+          <h3>Components</h3>
+          <div class="comp-band ember">
+            <span class="e-btn">Add to cart</span>
+            <span class="e-btn ghost">Save recipe</span>
+            <span class="pill ai">Ask Ember</span>
+            <span class="chip on">Fruity</span>
+            <span class="tgl" aria-hidden="true"></span>
+            <span class="seg"><span>Light</span><span class="on">Medium</span><span>Dark</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="widgets ember">
+        <div class="widget">
+          <span class="e-hs">Flavor wheel</span>
+          <svg id="wheel" viewBox="0 0 240 240" role="img" aria-label="Flavor wheel with fruity and floral notes selected"></svg>
+          <div class="legend" id="legend"></div>
+        </div>
+        <div class="widget">
+          <span class="e-hs">Batch tracker</span>
+          <div class="card" style="gap:14px">
+            <div class="row"><span style="font-weight:600">Batch #0428</span><span class="sp"></span><span class="e-mono e-sub">ETA Oct 29</span></div>
+            <div id="tracker" style="display:grid;gap:10px"></div>
+          </div>
+        </div>
+        <div class="widget">
+          <span class="e-hs">Cupping score</span>
+          <div class="card" id="cupping" style="gap:9px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="helix">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="label">Project · UI kit · 2026</span>
+          <h2>HELIX: bio-performance OS for iOS & macOS</h2>
+        </div>
+        <p class="lead">A Liquid Glass health kit that turns wearables, CGM, sleep and lab data into one readiness score. Each body system owns one neon hue, so color tells you what you are looking at.</p>
+      </div>
+
+      <div class="project">
+        <div><span class="label">Role</span><b>Concept, UI, design system</b></div>
+        <div><span class="label">Platforms</span><b>iOS 390 · macOS 1440</b></div>
+        <div><span class="label">Themes</span><b>Abyss & Frost</b></div>
+        <div><span class="label">Made for</span><b>UI8 marketplace</b></div>
+      </div>
+
+      <div class="helix hx-band" id="helixBand" data-mode="dark">
+        <div class="hx-bar">
+          <span class="t">iPhone app</span>
+          <span class="s">Readiness, sleep and glucose, with an AI coach that shows its reasons</span>
+          <div class="hx-mode" role="group" aria-label="HELIX theme">
+            <button type="button" id="hxDark" aria-pressed="true">Abyss</button>
+            <button type="button" id="hxLight" aria-pressed="false">Frost</button>
+          </div>
+        </div>
+
+        <div class="hx-phones">
+          <!-- Today -->
+          <div class="phone"><div class="hx-screen">
+            <span class="au" style="width:220px;height:200px;left:20px;top:80px;background:var(--h-mint)"></span>
+            <span class="au" style="width:200px;height:180px;left:-80px;top:380px;background:var(--h-cyan)"></span>
+            <div class="hx-sb"><span>9:41</span><span><i></i><i></i></span></div>
+            <div class="hx-sc">
+              <div><div class="hx-caps">Tuesday, Oct 28</div><div class="hx-title">Good morning, Mira</div></div>
+              <div class="hx-orb"><span class="halo"></span><span class="sphere"><span class="fluid"></span><span class="shine"></span></span><span class="val"><b>87</b><small>PRIMED</small></span></div>
+              <div class="hx-rings">
+                <div class="hx-glass"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" fill="none" stroke="var(--h-glass2)" stroke-width="5"/><circle cx="25" cy="25" r="20" fill="none" stroke="var(--h-cyan)" stroke-width="5" stroke-linecap="round" stroke-dasharray="103 126" transform="rotate(-90 25 25)"/><text x="25" y="29" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--h-text)">68</text></svg><span class="hx-sub">HRV</span></div>
+                <div class="hx-glass"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" fill="none" stroke="var(--h-glass2)" stroke-width="5"/><circle cx="25" cy="25" r="20" fill="none" stroke="var(--h-violet)" stroke-width="5" stroke-linecap="round" stroke-dasharray="114 126" transform="rotate(-90 25 25)"/><text x="25" y="29" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--h-text)">91</text></svg><span class="hx-sub">Sleep</span></div>
+                <div class="hx-glass"><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" fill="none" stroke="var(--h-glass2)" stroke-width="5"/><circle cx="25" cy="25" r="20" fill="none" stroke="var(--h-magenta)" stroke-width="5" stroke-linecap="round" stroke-dasharray="74 126" transform="rotate(-90 25 25)"/><text x="25" y="29" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--h-text)">12.4</text></svg><span class="hx-sub">Strain</span></div>
+              </div>
+              <div class="hx-coach">
+                <div class="hx-row"><span class="hx-av"><svg viewBox="0 0 24 24" fill="none" stroke="#05070D" stroke-width="2" stroke-linejoin="round"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg></span><b style="font-size:12.5px">Helix Coach</b></div>
+                <div style="font-size:11.5px">HRV dropped 18% and deep sleep was short. Keep today in zone 2.</div>
+                <div class="hx-chips"><span class="hx-chip" style="color:var(--h-cyan)">HRV −18%</span><span class="hx-chip" style="color:var(--h-violet)">Deep 52m</span></div>
+              </div>
+            </div>
+            <div class="hx-tab hx-glass"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/></svg>Today</span><span><svg viewBox="0 0 24 24" fill="none" stroke="var(--h-text2)" stroke-width="1.8"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="var(--h-text2)" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="var(--h-text2)" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></span></div>
+          </div></div>
+
+          <!-- Sleep -->
+          <div class="phone"><div class="hx-screen">
+            <span class="au" style="width:240px;height:220px;left:-40px;top:40px;background:var(--h-violet)"></span>
+            <span class="au" style="width:180px;height:160px;left:140px;top:420px;background:var(--h-cyan)"></span>
+            <div class="hx-sb"><span>9:41</span><span><i></i><i></i></span></div>
+            <div class="hx-sc">
+              <div><div class="hx-caps">Last night</div><div class="hx-title">Sleep</div></div>
+              <div class="hx-glass hx-card">
+                <div class="hx-row"><div><b style="font-size:13px">7h 43m</b><div class="hx-sub">22:48 – 06:31</div></div><span style="flex:1"></span><span class="hx-badge" style="color:var(--h-mint);background:color-mix(in srgb,var(--h-mint) 16%,transparent)">● Score 91</span></div>
+                <div class="hx-chart"><svg id="hypno" viewBox="0 0 220 110" aria-label="Sleep stages through the night"></svg></div>
+                <div class="hx-row" style="justify-content:space-between">
+                  <div><div class="hx-caps">Deep</div><span class="hx-mono" style="color:var(--h-violet)">1h 52m</span></div>
+                  <div><div class="hx-caps">REM</div><span class="hx-mono" style="color:var(--h-cyan)">1h 38m</span></div>
+                  <div><div class="hx-caps">Awake</div><span class="hx-mono" style="color:var(--h-amber)">32m</span></div>
+                </div>
+              </div>
+              <div class="hx-tiles">
+                <div class="hx-glass"><span class="hx-caps">Effic.</span><b style="color:var(--h-violet)">94%</b></div>
+                <div class="hx-glass"><span class="hx-caps">Debt</span><b style="color:var(--h-amber)">−24m</b></div>
+                <div class="hx-glass"><span class="hx-caps">RHR</span><b style="color:var(--h-magenta)">51</b></div>
+              </div>
+              <div class="hx-glass hx-card">
+                <span class="hx-caps">Tonight</span>
+                <div class="hx-row"><b style="font-size:12.5px">Ideal window 22:45 – 06:30</b></div>
+                <div class="hx-row"><span style="padding:6px 10px;border-radius:12px;background:var(--h-violet);color:#fff;font-size:11px;font-weight:600;box-shadow:0 0 18px color-mix(in srgb,var(--h-violet) calc(var(--h-glow)*100%),transparent)">☾ Wind-down on</span></div>
+              </div>
+            </div>
+            <div class="hx-tab hx-glass"><span><svg viewBox="0 0 24 24" fill="none" stroke="var(--h-text2)" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/></svg></span><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>Sleep</span><span><svg viewBox="0 0 24 24" fill="none" stroke="var(--h-text2)" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="var(--h-text2)" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></span></div>
+          </div></div>
+
+          <!-- Glucose -->
+          <div class="phone"><div class="hx-screen">
+            <span class="au" style="width:220px;height:200px;left:-60px;top:60px;background:var(--h-lime)"></span>
+            <span class="au" style="width:180px;height:160px;left:150px;top:440px;background:var(--h-amber)"></span>
+            <div class="hx-sb"><span>9:41</span><span><i></i><i></i></span></div>
+            <div class="hx-sc">
+              <div><div class="hx-caps">Metabolic</div><div class="hx-title">Glucose</div></div>
+              <div class="hx-glass hx-card">
+                <div class="hx-row"><div style="display:flex;align-items:baseline;gap:5px"><b style="font-family:var(--h-metric);font-weight:500;font-size:26px;color:var(--h-lime)">104</b><span class="hx-mono hx-sub">mg/dL</span></div><span style="flex:1"></span><span class="hx-badge" style="color:var(--h-amber);background:color-mix(in srgb,var(--h-amber) 16%,transparent)">● Spike 171</span></div>
+                <div class="hx-chart"><svg id="cgm" viewBox="0 0 220 110" aria-label="Glucose over 24 hours with the 70 to 140 target band"></svg></div>
+              </div>
+              <div class="hx-glass hx-card">
+                <div class="hx-row"><b style="font-size:12.5px">Time in range</b><span style="flex:1"></span><b style="font-family:var(--h-metric);font-weight:500;color:var(--h-lime)">91%</b></div>
+                <div class="hx-bar3"><span style="flex:2;background:var(--h-red)"></span><span style="flex:91;background:var(--h-lime)"></span><span style="flex:7;background:var(--h-amber)"></span></div>
+              </div>
+              <div class="hx-glass hx-card hx-list" style="gap:0;padding:4px 12px">
+                <div><span class="hx-ic" style="background:color-mix(in srgb,var(--h-amber) 18%,transparent);color:var(--h-amber)">●</span><div style="flex:1"><div style="font-size:12px">Oat bowl, berries</div><div class="hx-sub">07:40 · peak 171</div></div><span class="hx-mono hx-sub">Spike</span></div>
+                <div><span class="hx-ic" style="background:color-mix(in srgb,var(--h-lime) 18%,transparent);color:var(--h-lime)">●</span><div style="flex:1"><div style="font-size:12px">Salmon, quinoa</div><div class="hx-sub">12:55 · peak 139</div></div><span class="hx-mono hx-sub">Steady</span></div>
+              </div>
+            </div>
+            <div class="hx-tab hx-glass"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/></svg>Today</span><span><svg viewBox="0 0 24 24" fill="none" stroke="var(--h-text2)" stroke-width="1.8"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="var(--h-text2)" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="var(--h-text2)" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></span></div>
+          </div></div>
+        </div>
+
+        <div class="hx-extra">
+          <div class="hx-island" aria-label="Live Activity in the Dynamic Island">
+            <div style="display:flex;align-items:center;gap:10px"><span style="color:#FF4FD8">♥</span><div style="flex:1"><div style="font-weight:600;font-size:14px">Zone 2 run</div><div style="font-family:var(--h-mono);font-size:11px;color:#8E98B8">32:14 · 5.8 km</div></div><b style="font-family:var(--h-metric);font-weight:500;font-size:28px;color:#FF4FD8">148</b></div>
+            <div class="zones"><span></span><span></span><span class="on"></span><span></span><span></span></div>
+          </div>
+          <div class="hx-widget" aria-label="Home Screen widget">
+            <span style="font-family:var(--h-mono);font-size:9px;letter-spacing:.12em;color:#8E98B8">HELIX</span>
+            <svg viewBox="0 0 80 80" style="width:80px;height:80px"><circle cx="40" cy="40" r="32" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="8"/><circle cx="40" cy="40" r="32" fill="none" stroke="#3DFFB5" stroke-width="8" stroke-linecap="round" stroke-dasharray="175 201" transform="rotate(-90 40 40)" style="filter:drop-shadow(0 0 6px rgba(61,255,181,.7))"/><text x="40" y="47" text-anchor="middle" font-family="Unbounded, sans-serif" font-size="20" fill="#F2F5FF">87</text></svg>
+            <span style="font-size:12px;color:#3DFFB5">Primed</span>
+          </div>
+          <div class="hx-hues" aria-label="Bio hue system">
+            <span><i style="--c:var(--h-mint)"></i>Recovery</span><span><i style="--c:var(--h-cyan)"></i>HRV</span><span><i style="--c:var(--h-violet)"></i>Sleep</span>
+            <span><i style="--c:var(--h-lime)"></i>Glucose</span><span><i style="--c:var(--h-magenta)"></i>Strain</span><span><i style="--c:var(--h-amber)"></i>Temp</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div><strong>22</strong><span class="label">Screens, each Abyss & Frost</span></div>
+        <div><strong>120</strong><span class="label">Component variants</span></div>
+        <div><strong>15</strong><span class="label">Bio widget families</span></div>
+        <div><strong>41</strong><span class="label">Line icons</span></div>
+        <div><strong>91</strong><span class="label">Figma variables</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="craft">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="label">How I build kits</span>
+          <h2>Made to be used, not just admired</h2>
+        </div>
+        <p class="lead">A kit is only as good as the file a buyer opens. These are the rules I hold every kit to.</p>
+      </div>
+      <div class="craft">
+        <div><h3>Variables everywhere</h3><p>Fills, strokes, padding, gaps and radii are bound to tokens. Change the brand color once and every screen follows.</p></div>
+        <div><h3>Auto Layout, all the way down</h3><p>Components resize with their content. Text never clips, cards never overlap, and screens adapt when copy changes.</p></div>
+        <div><h3>Real states, real content</h3><p>Default, hover, pressed, disabled and loading for every control, plus empty, error and offline screens. No lorem ipsum.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="next">
+    <div class="wrap">
+      <div class="next">
+        <div class="nova">
+          <span class="label status">In progress</span>
+          <h3>Nova UI kit</h3>
+          <p class="lead">A modern kit for mobile and web: onboarding, login, profile, settings and payments, plus tables, modals, calendars, notifications and empty states. Full light and dark themes.</p>
+        </div>
+        <div class="panel">
+          <span class="label">Toolkit</span>
+          <div class="list">
+            <div><span>Figma variables & modes</span><span class="label">Daily</span></div>
+            <div><span>Components & variants</span><span class="label">Daily</span></div>
+            <div><span>Auto Layout</span><span class="label">Daily</span></div>
+            <div><span>Prototyping</span><span class="label">Often</span></div>
+            <div><span>UI8 product presentation</span><span class="label">Often</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" style="border-bottom:0">
+    <div class="wrap">
+      <span class="label">Contact</span>
+      <h2>Let's build your <span>next kit.</span></h2>
+      <div class="links" id="links" aria-live="polite"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="label">© 2026 Izzatilla Ibrohimjonoff</span>
+    <span class="label">UI kits · Design systems · Figma</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // EMBER theme toggle
+  var band = document.getElementById('emberBand');
+  var bL = document.getElementById('modeLight'), bD = document.getElementById('modeDark');
+  function setMode(m) {
+    band.setAttribute('data-mode', m);
+    bL.setAttribute('aria-pressed', String(m === 'light'));
+    bD.setAttribute('aria-pressed', String(m === 'dark'));
+  }
+  bL.addEventListener('click', function () { setMode('light'); });
+  bD.addEventListener('click', function () { setMode('dark'); });
+
+  // Scale the desktop mockup to its container
+  var wrap = document.getElementById('deskWrap'), desk = document.getElementById('desk');
+  function fit() {
+    var s = Math.min(1, wrap.clientWidth / 1120);
+    desk.style.transform = 'scale(' + s + ')';
+    wrap.style.height = Math.ceil(desk.offsetHeight * s) + 'px';
+  }
+  fit();
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+
+  // Color tokens
+  var sw = [['bg/canvas', '--e-canvas'], ['bg/surface', '--e-surface'], ['bg/sunken', '--e-sunken'], ['border', '--e-border'], ['text/primary', '--e-text'], ['text/secondary', '--e-text-2'],
+    ['brand/primary', '--e-brand'], ['brand/hover', '--e-brand-2'], ['brand/moss', '--e-moss'], ['brand/honey', '--e-honey'], ['ai/rose', '--e-rose'], ['status/success', '--e-success'],
+    ['roast/light', '--e-r-light'], ['roast/medium', '--e-r-medium'], ['roast/m-dark', '--e-r-mdark'], ['roast/dark', '--e-r-dark']];
+  var swEl = document.getElementById('swatches');
+  sw.forEach(function (s) {
+    var d = document.createElement('div');
+    d.innerHTML = '<span style="background:var(' + s[1] + ')"></span><code>' + s[0] + '</code>';
+    swEl.appendChild(d);
+  });
+
+  // Flavor wheels
+  var cats = [['Fruity', '#E8A798'], ['Floral', '#E0A03A'], ['Sweet', '#D9A66B'], ['Nutty', '#A5672F'], ['Spicy', '#C4572B'], ['Green', '#5F6B3A']];
+  function arc(cx, cy, r0, r1, a0, a1) {
+    var p = function (r, a) { return [cx + r * Math.cos(a), cy + r * Math.sin(a)].map(function (n) { return n.toFixed(2); }).join(' '); };
+    var large = a1 - a0 > Math.PI ? 1 : 0;
+    return 'M' + p(r1, a0) + ' A' + r1 + ' ' + r1 + ' 0 ' + large + ' 1 ' + p(r1, a1) + ' L' + p(r0, a1) + ' A' + r0 + ' ' + r0 + ' 0 ' + large + ' 0 ' + p(r0, a0) + 'Z';
+  }
+  function drawWheel(svg, size, selOuter, selMid, label) {
+    var c = size / 2, R = size / 2, P = Math.PI, h = '';
+    for (var i = 0; i < 12; i++) {
+      var on = selOuter.indexOf(i) > -1;
+      h += '<path d="' + arc(c, c, R * .72, R, -P / 2 + i * P / 6, -P / 2 + (i + 1) * P / 6) + '" fill="' + cats[Math.floor(i / 2)][1] + '" fill-opacity="' + (on ? .85 : .2) + '" stroke="var(--e-canvas)" stroke-width="2"/>';
+    }
+    for (var j = 0; j < 6; j++) {
+      var on2 = selMid.indexOf(j) > -1;
+      h += '<path d="' + arc(c, c, R * .36, R * .69, -P / 2 + j * P / 3, -P / 2 + (j + 1) * P / 3) + '" fill="' + cats[j][1] + '" fill-opacity="' + (on2 ? 1 : .25) + '" stroke="var(--e-canvas)" stroke-width="2"/>';
+    }
+    h += '<circle cx="' + c + '" cy="' + c + '" r="' + (R * .33) + '" fill="var(--e-surface)"/>';
+    if (label) h += '<text x="' + c + '" y="' + (c - 2) + '" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="' + (size * .055) + '" fill="var(--e-text)">' + label[0] + '</text><text x="' + c + '" y="' + (c + size * .065) + '" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="' + (size * .055) + '" fill="var(--e-text)">' + label[1] + '</text>';
+    svg.innerHTML = h;
+  }
+  drawWheel(document.getElementById('wheel'), 240, [0, 1, 3, 4], [0, 1], ['Fruity', 'Floral']);
+  document.querySelectorAll('.mini-wheel').forEach(function (s) { drawWheel(s, 200, [0, 1, 2, 3], [0, 1], null); });
+  var lg = document.getElementById('legend');
+  cats.forEach(function (c) { var s = document.createElement('span'); s.style.setProperty('--c', c[1]); s.textContent = c[0]; lg.appendChild(s); });
+
+  // Batch tracker
+  var steps = [['Green', 'done'], ['Roasting', 'done'], ['Cooling', 'done'], ['Resting', 'now'], ['Packed', 'next'], ['Shipped', 'next']];
+  var tr = document.getElementById('tracker');
+  steps.forEach(function (s, i) {
+    var d = document.createElement('div'); d.className = 'row';
+    var dot = s[1] === 'done' ? '<span style="width:22px;height:22px;border-radius:50%;background:var(--e-success);color:#fff;display:grid;place-items:center;font-size:11px">✓</span>'
+      : s[1] === 'now' ? '<span style="width:22px;height:22px;border-radius:50%;background:var(--e-brand);box-shadow:0 0 0 5px color-mix(in srgb,var(--e-brand) 20%,transparent)"></span>'
+      : '<span style="width:22px;height:22px;border-radius:50%;border:1.5px solid var(--e-border);display:grid;place-items:center;font-family:var(--e-mono);font-size:10px;color:var(--e-text-2)">' + (i + 1) + '</span>';
+    d.innerHTML = dot + '<span style="' + (s[1] === 'now' ? 'font-weight:600' : s[1] === 'next' ? 'color:var(--e-text-2)' : '') + '">' + s[0] + '</span>';
+    tr.appendChild(d);
+  });
+
+  // Cupping sheet
+  var cup = [['Fragrance', 8.5], ['Flavor', 8.75], ['Acidity', 8.5], ['Body', 8.0], ['Balance', 8.25], ['Sweetness', 10]];
+  var cu = document.getElementById('cupping');
+  cup.forEach(function (c) {
+    var d = document.createElement('div'); d.className = 'row';
+    var w = Math.round((c[1] - 6) / 4 * 100);
+    d.innerHTML = '<span style="width:76px;font-size:12px">' + c[0] + '</span><span class="track" style="flex:1"><b style="width:' + w + '%;background:' + (c[1] >= 8.5 ? 'var(--e-brand)' : 'var(--e-r-light)') + '"></b></span><span class="e-mono" style="font-size:12px;width:36px;text-align:right">' + c[1].toFixed(2) + '</span>';
+    cu.appendChild(d);
+  });
+  var tot = document.createElement('div'); tot.className = 'row';
+  tot.style.cssText = 'border-top:1px solid var(--e-border);padding-top:9px;margin-top:2px';
+  tot.innerHTML = '<span class="e-sub">Total score</span><span class="sp"></span><span class="e-mono" style="font-size:22px;color:var(--e-brand)">87.25</span>';
+  cu.appendChild(tot);
+
+  // HELIX theme toggle
+  var hx = document.getElementById('helixBand');
+  var hD = document.getElementById('hxDark'), hL = document.getElementById('hxLight');
+  function hxMode(m) { hx.setAttribute('data-mode', m); hD.setAttribute('aria-pressed', String(m === 'dark')); hL.setAttribute('aria-pressed', String(m === 'light')); }
+  hD.addEventListener('click', function () { hxMode('dark'); });
+  hL.addEventListener('click', function () { hxMode('light'); });
+
+  // HELIX hypnogram: [stage, minutes] — 0 deep · 1 light · 2 REM · 3 awake
+  var seg = [[3, 8], [1, 22], [0, 48], [1, 30], [2, 18], [1, 26], [0, 40], [1, 34], [2, 26], [3, 6], [1, 38], [0, 24], [2, 32], [1, 40], [2, 22], [3, 10], [1, 20], [2, 19]];
+  var col = ['var(--h-violet)', 'var(--h-violet)', 'var(--h-cyan)', 'var(--h-amber)'], op = [1, .45, .85, .9];
+  var hy = document.getElementById('hypno'), W = 220, lane = 22, total = seg.reduce(function (a, b) { return a + b[1]; }, 0), h = '', x = 0, prevY = null;
+  for (var l = 0; l < 4; l++) h += '<line x1="0" x2="' + W + '" y1="' + (l * lane + 11) + '" y2="' + (l * lane + 11) + '" stroke="var(--h-edge)"/>';
+  var bars = '', links = '';
+  seg.forEach(function (sg) {
+    var w = sg[1] / total * W, y = (3 - sg[0]) * lane + 4;
+    if (prevY !== null) links += '<line x1="' + x.toFixed(1) + '" x2="' + x.toFixed(1) + '" y1="' + (prevY + 7) + '" y2="' + (y + 7) + '" stroke="var(--h-text3)" stroke-opacity=".5"/>';
+    bars += '<rect x="' + x.toFixed(1) + '" y="' + y + '" width="' + Math.max(3, w - 1).toFixed(1) + '" height="14" rx="4" fill="' + col[sg[0]] + '" fill-opacity="' + op[sg[0]] + '"' + (sg[0] === 0 ? ' style="filter:drop-shadow(0 0 4px var(--h-violet))"' : '') + '/>';
+    x += w; prevY = y;
+  });
+  h += links + bars;
+  ['23:00', '02:00', '06:30'].forEach(function (t, k) { h += '<text x="' + [0, 92, 188][k] + '" y="106" font-family="JetBrains Mono, monospace" font-size="8" fill="var(--h-text3)">' + t + '</text>'; });
+  hy.innerHTML = h;
+
+  // HELIX CGM curve
+  var g = [96, 92, 90, 94, 118, 152, 171, 148, 122, 104, 98, 101, 126, 139, 128, 110, 100, 96, 112, 134, 121, 104, 95, 92];
+  var cg = document.getElementById('cgm'), H = 96, lo = 60, hi = 190;
+  function yv(v) { return H - (v - lo) / (hi - lo) * H; }
+  var pts = g.map(function (v, k) { return [k * W / (g.length - 1), yv(v)]; });
+  var d = 'M' + pts[0][0].toFixed(1) + ' ' + pts[0][1].toFixed(1);
+  for (var k = 0; k < pts.length - 1; k++) {
+    var p0 = pts[k - 1] || pts[k], p1 = pts[k], p2 = pts[k + 1], p3 = pts[k + 2] || p2;
+    d += ' C' + [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6, p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6, p2[0], p2[1]].map(function (n) { return n.toFixed(1); }).join(' ');
+  }
+  var c = '<rect x="0" y="' + yv(140).toFixed(1) + '" width="' + W + '" height="' + (yv(70) - yv(140)).toFixed(1) + '" rx="6" fill="var(--h-lime)" fill-opacity=".09"/>';
+  [70, 140].forEach(function (v) { c += '<line x1="0" x2="' + W + '" y1="' + yv(v).toFixed(1) + '" y2="' + yv(v).toFixed(1) + '" stroke="var(--h-lime)" stroke-opacity=".35"/><text x="' + (W - 14) + '" y="' + (yv(v) - 3).toFixed(1) + '" font-family="JetBrains Mono, monospace" font-size="8" fill="var(--h-text3)">' + v + '</text>'; });
+  c += '<path d="' + d + '" fill="none" stroke="var(--h-lime)" stroke-width="2.2" stroke-linecap="round" style="filter:drop-shadow(0 0 4px color-mix(in srgb, var(--h-lime) 70%, transparent))"/>';
+  [4, 12, 18].forEach(function (k) { c += '<circle cx="' + pts[k][0].toFixed(1) + '" cy="' + pts[k][1].toFixed(1) + '" r="3.5" fill="var(--h-amber)" stroke="var(--h-bg)" stroke-width="1.5"/>'; });
+  ['00', '06', '12', '18', '24'].forEach(function (t, q) { c += '<text x="' + [0, 52, 104, 156, 208][q] + '" y="108" font-family="JetBrains Mono, monospace" font-size="8" fill="var(--h-text3)">' + t + '</text>'; });
+  cg.innerHTML = c;
+
+  // Contact links from the PORTFOLIO_LINKS block at the top of the file
+  var L = window.PORTFOLIO_LINKS || {}, box = document.getElementById('links');
+  function clean(v) { return (v == null ? '' : String(v)).trim(); }
+  function url(v) { v = clean(v); if (!v) return ''; return /^https?:\/\//i.test(v) ? v : 'https://' + v.replace(/^\/+/, ''); }
+  function short(u) { return u.replace(/^https?:\/\/(www\.)?/i, '').replace(/\/$/, ''); }
+  function card(name, href, label) {
+    var a = document.createElement('a'); a.href = href; a.target = '_blank'; a.rel = 'noopener';
+    a.appendChild(document.createTextNode(name));
+    var sm = document.createElement('small'); sm.textContent = label; a.appendChild(sm);
+    box.appendChild(a);
+  }
+  function off(name) {
+    var d = document.createElement('div'); d.className = 'off';
+    d.appendChild(document.createTextNode(name));
+    var sm = document.createElement('small'); sm.textContent = 'Coming soon'; d.appendChild(sm);
+    box.appendChild(d);
+  }
+  [['Dribbble', L.dribbble], ['Behance', L.behance]].forEach(function (x) { var u = url(x[1]); if (u) card(x[0], u, short(u)); else off(x[0]); });
+  var em = clean(L.email);
+  if (em) {
+    var m = document.createElement('div'); m.className = 'mail';
+    var top = document.createElement('div'); top.appendChild(document.createTextNode('Email'));
+    var b = document.createElement('button'); b.type = 'button'; b.textContent = 'Copy'; top.appendChild(b);
+    var code = document.createElement('code'); code.textContent = em;
+    m.appendChild(top); m.appendChild(code); box.appendChild(m);
+    b.addEventListener('click', function () {
+      function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1600); }
+      function sel() { var r = document.createRange(); r.selectNodeContents(code); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+      try { navigator.clipboard.writeText(em).then(done, sel); } catch (e) { sel(); }
+    });
+  } else off('Email');
+  var tg = clean(L.telegram).replace(/^https?:\/\/(t\.me|telegram\.me)\//i, '').replace(/^@/, '');
+  if (tg) card('Telegram', 'https://t.me/' + encodeURIComponent(tg), '@' + tg); else off('Telegram');
+})();
+</script>
+
+</body>
+</html>
